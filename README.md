@@ -1,12 +1,11 @@
 
- ## JADX Example plugin
+ ## JADX Allatori plugin
 
-Simple example of jadx plugin.
-Adds a jadx watermark comment to every generated java class
+Replace known Allatori string decrypt calls with decoded string constants
 
-Install using location id: `github:jadx-decompiler:jadx-example-plugin`
+Install using location id: `github:jadx-decompiler:jadx-allatori-plugin`
 
 In jadx-cli:
 ```bash
-  jadx plugins --install "github:jadx-decompiler:jadx-example-plugin"
+  jadx plugins --install "github:jadx-decompiler:jadx-allatori-plugin"
 ```

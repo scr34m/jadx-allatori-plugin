@@ -24,6 +24,10 @@ dependencies {
 	testImplementation("io.github.skylot:jadx-smali-input:$jadxVersion") {
         isChanging = isJadxSnapshot
     }
+	testImplementation("io.github.skylot:jadx-java-input:$jadxVersion") {
+        isChanging = isJadxSnapshot
+    }
+	testImplementation("org.ow2.asm:asm:9.6")
 	testImplementation("ch.qos.logback:logback-classic:1.5.18")
 	testImplementation("org.assertj:assertj-core:3.27.3")
 	testImplementation("org.junit.jupiter:junit-jupiter:5.12.1")

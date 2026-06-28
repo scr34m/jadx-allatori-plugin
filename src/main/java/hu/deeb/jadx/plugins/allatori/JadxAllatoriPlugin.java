@@ -1,30 +1,24 @@
-package jadx.plugins.example;
+package hu.deeb.jadx.plugins.allatori;
 
 import jadx.api.plugins.JadxPlugin;
 import jadx.api.plugins.JadxPluginContext;
 import jadx.api.plugins.JadxPluginInfo;
 import jadx.api.plugins.JadxPluginInfoBuilder;
 
-public class JadxExamplePlugin implements JadxPlugin {
+public class JadxAllatoriPlugin implements JadxPlugin {
 	public static final String PLUGIN_ID = "example-plugin";
-
-	private final ExampleOptions options = new ExampleOptions();
 
 	@Override
 	public JadxPluginInfo getPluginInfo() {
 		return JadxPluginInfoBuilder.pluginId(PLUGIN_ID)
-				.name("Jadx example plugin")
-				.description("Add jadx watermark comment to every class")
-				.homepage("https://github.com/jadx-decompiler/jadx-example-plugin")
+				.name("Jadx Allatori deobfuscate plugin")
+				.description("Replace known Allatori string decrypt calls with decoded string constants")
 				.requiredJadxVersion("1.5.1, r2333")
 				.build();
 	}
 
 	@Override
 	public void init(JadxPluginContext context) {
-		context.registerOptions(options);
-		if (options.isEnable()) {
-			context.addPass(new AddCommentPass());
-		}
+		context.addPass(new AllatoriDeobfuscatePass());
 	}
 }
